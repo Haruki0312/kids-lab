@@ -1,0 +1,86 @@
+.main {
+  background: #f8f8f8;
+  width: 100vw;
+}
+
+h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  margin-bottom: 10px;
+}
+
+h2:before, h2:after {
+  border-top: 3px solid #e9967a;
+  content: "";
+  width: 30vw;
+}
+
+h2:before {
+  margin-right: 2vw;
+}
+
+h2:after {
+  margin-left: 2vw;
+}
+
+.what-site-message {
+  font-size: 20px;
+  text-align: center;
+  background-color: #eeeeee;
+  border-radius: 10px;
+  margin: 0 15vw;
+  padding: 30px 0;
+}
+
+.work-lists {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.work-image {
+  width: 20vw;
+  height: 20vh;
+}
+
+.work-main-info {
+  color: #333333;
+  display: flex;
+  justify-content: space-between;
+  width: 20vw;
+}
+
+.work-sub-info {
+  color: #333333;
+  font-size: 15px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.like-star {
+  width: 15px;
+  height: 15px;
+}
+
+.theme-lists {
+  width: 100vw;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+}
+
+.theme-img {
+  background-color: #eeeeee;
+  margin: 0 5px;
+  border-radius: 50%;
+  width: 10vw;
+  height: 10vh;
+}
+
+.theme-name {
+  text-align: center;
+  width: 11vw;
+}

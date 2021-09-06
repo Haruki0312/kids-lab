@@ -1,0 +1,105 @@
+<%= render "shared/header" %>
+<div class='main'>
+  <div class='what-site'>
+    <h2 class='what-site-title'>
+      どんなサイト？
+    </h2>
+    <div class='what-site-message'>
+      子どもの夏休みの自由研究何しよう？？
+      <p>
+        そんな悩める世のお母さん、お父さんのための
+      </p>
+      <p>
+        自由研究の作品共有サイトです。
+      </p>
+    </div>
+  </div>
+  <div class='main-contens'>
+    <h2 class='main-contents-title'>
+      新着UP
+    </h2>
+    <ul class='work-lists'>
+      <li class='list'>
+        <%= link_to "#" do %>
+          <%= image_tag "sample1", class: 'work-image' %>
+          <div class='work-main-info'>
+            <h3 class='work-title'>
+              タイトル
+            </h3>
+            <div class='work-username'>
+              @ユーザー
+            </div>
+          </div>
+          <div class='work-sub-info'>
+            <div class='work-sub-info-left'>
+              <div class='work-theme'>テーマ：
+                サンプル
+              </div>
+              <div class='work-days'>制作日数：
+                ◯日
+              </div>
+            </div>
+            <div class='work-sub-info-right'>
+              <div class='work-comments'>コメント：
+                ◯件
+              </div>
+              <div class='work-likes'>いいね
+                <%= image_tag "star", class: 'like-star' %>
+                ◯件
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+  <div class='theme-search'>
+    <h2 class='theme-search-title'>
+      テーマ検索
+    </h2>
+    <ul class='theme-lists'>
+      <li class='theme-image'>
+        <%= link_to image_tag("experiment", class: 'theme-img'), "#" %>
+        <div class='theme-name'>
+          実験
+        </div>
+      </li>
+      <li class='theme-image'>
+        <%= link_to image_tag("make", class: 'theme-img'), "#" %>
+        <div class='theme-name'>
+          工作
+        </div>
+      </li>
+      <li class='theme-image'>
+        <%= link_to image_tag("observation", class: 'theme-img'), "#" %>
+        <div class='theme-name'>
+          観察
+        </div>
+      </li>
+      <li class='theme-image'>
+        <%= link_to image_tag("research", class: 'theme-img'), "#" %>
+        <div class='theme-name'>
+          調べ学習
+        </div>
+      </li>
+      <li class='theme-image'>
+        <%= link_to image_tag("weather", class: 'theme-img'), "#" %>
+        <div class='theme-name'>
+          天候
+        </div>
+      </li>
+      <li class='theme-image'>
+        <%= link_to image_tag("cooking", class: 'theme-img'), "#" %>
+        <div class='theme-name'>
+          料理/食べ物
+        </div>
+      </li>
+    </ul>
+  </div>
+
+</div>
+<%= link_to("#", class: 'post-btn') do %>
+  <span class='post-btn-text'>投稿する</span>
+  <%= image_tag 'post-icon' , size: '185x50' ,class: "post-btn-icon" %>
+<% end %>
+<%= render "shared/footer" %>
