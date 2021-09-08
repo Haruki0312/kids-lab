@@ -1,0 +1,74 @@
+<div class='work-post-contents'>
+  <%= render "shared/second_header" %>
+  <div class='work-post-main'>
+    <h2 class='work-post-title'>作品投稿</h2>
+    <%= form_with local: true do |f| %>
+      <%# エラーメッセージが出力されるようにする render %>
+
+      <%# /エラーメッセージが出力されるようにする render %>
+
+      <%# 作品完成画像 :hogeは指定し直す %>
+      <div class='comp-image-upload'>
+        <div class='weight-bold-text'>
+          作品完成画像
+          <span class='indispensable'>必須</span>
+        </div>
+        <%= f.file_field :hoge, class:'comp-img', id:'comp-image' %>
+      </div>
+      <%# /作品完成画像 :hogeは指定し直す %>
+      <%# タイトルと使用素材 :hogeは指定し直す %>
+      <div class='new-title'>
+        <div class='weight-bold-text'>
+          タイトル
+          <span class='indispensable'>必須</span>
+        </div>
+        <%= f.text_field :hoge, class:'work-text', id:'work-title', placeholder:'作品のタイトルを入力してください' %>
+      </div>
+      <div class='new-material'>
+        <div class='weight-bold-text'>
+          使用した材料
+          <span class='indispensable'>必須</span>
+        </div>
+        <%= f.text_area :hoge, class:'work-text', id:'work-title', placeholder:'使用した材料を入力してください。使用した個数も入力するとわかりやすいです。', rows:'7' %>
+      </div>
+      <%# /タイトルと使用素材 :hogeは指定し直す %>
+      <%# 作品の説明 :hogeは指定し直す ActiveHash使う %>
+      <div class='new-theme'>
+        <div class='weight-bold-text'>
+          テーマ
+          <span class='indispensable'>必須</span>
+        </div>
+        <%= f.collection_select(:hoge, [], :hoge, :hoge, {}, {class:'select-box', id:'work-theme'}) %>
+      </div>
+      <div class='new-days'>
+        <div class='weight-bold-text'>
+          制作日数
+          <span class='indispensable'>必須</span>
+        </div>
+        <%= f.collection_select(:hoge, [], :hoge, :hoge, {}, {class:'select-box', id:'work-days'}) %>
+      </div>
+      <div class='new-grade'>
+        <div class='weight-bold-text'>
+          お子さまの学年
+          <span class='indispensable'>必須</span>
+        </div>
+        <%= f.collection_select(:hoge, [], :hoge, :hoge, {}, {class:'select-box', id:'work-grade'}) %>
+      </div>
+      <div class='new-info'>
+        <div class='weight-bold-text'>
+          作品の説明
+          <span class='indispensable'>必須</span>
+        </div>
+        <%= f.text_area :hoge, class:'work-text', id:'work-info', placeholder:'作品の説明（作った手順1.〜〜〜 2.〜〜〜・・・、工夫した点、大変だったこと など）', rows:'10' %>
+      </div>
+      <%# /作品の説明 :hogeは指定し直す ActiveHash使う %>
+      <%# 下部ボタン :hogeは指定し直す %>
+      <div class='post-btn-contents'>
+        <%= f.submit '投稿する', class:'submit-btn' %>
+        <%= link_to 'もどる', root_path, class:'back-btn' %>
+      </div>
+      <%# /下部ボタン :hogeは指定し直す %>
+    <% end %>
+  </div>
+  <%= render "shared/footer" %>
+</div>

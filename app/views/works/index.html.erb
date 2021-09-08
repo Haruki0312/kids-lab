@@ -20,6 +20,7 @@
     </h2>
     <ul class='work-lists'>
       <li class='list'>
+        <%# each文で投稿一覧が表示されるようにする "#"のパス指定する %>
         <%= link_to "#" do %>
           <%= image_tag "sample1", class: 'work-image' %>
           <div class='work-main-info'>
@@ -50,6 +51,7 @@
             </div>
           </div>
         <% end %>
+        <%# /each文で投稿一覧が表示されるようにする "#"のパス指定する %>
       </li>
     </ul>
   </div>
@@ -58,6 +60,7 @@
       テーマ検索
     </h2>
     <ul class='theme-lists'>
+      <%# カテゴリ検索できるようにする "#"のパス指定する %>
       <li class='theme-image'>
         <%= link_to image_tag("experiment", class: 'theme-img'), "#" %>
         <div class='theme-name'>
@@ -94,12 +97,15 @@
           料理/食べ物
         </div>
       </li>
+      <%# /カテゴリ検索できるようにする "#"のパス指定する %>
     </ul>
   </div>
 
 </div>
+<%# 投稿ボタン リンクのパス指定する %>
 <%= link_to("#", class: 'post-btn') do %>
   <span class='post-btn-text'>投稿する</span>
   <%= image_tag 'post-icon' , size: '185x50' ,class: "post-btn-icon" %>
 <% end %>
+<%# /投稿ボタン リンクのパス指定する %>
 <%= render "shared/footer" %>

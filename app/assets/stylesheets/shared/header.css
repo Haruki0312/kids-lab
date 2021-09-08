@@ -4,7 +4,7 @@
 }
 
 .top-header {
-  background-color: #e4d5b0;
+  background-color: #f3eed5;
   width: 100vw;
   display: flex;
   justify-content: space-around;
@@ -18,9 +18,9 @@
 
 .lists {
   position: absolute;
-  right: 30px;
+  right: 5vw;
   display: flex;
-  font-size: 15px;
+  font-size: 1vw;
   margin: 35px 0 0 0;
 }
 
