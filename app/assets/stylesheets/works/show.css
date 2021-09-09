@@ -57,7 +57,8 @@
 
 .show-comments {
   text-align: center;
-  margin: 30px auto;
+  margin: 30px 0 auto;
+  padding-bottom: 30px;
 }
 
 .work-comment-title {
