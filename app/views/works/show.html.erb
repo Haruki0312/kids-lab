@@ -1,0 +1,68 @@
+<%= render "shared/second_header" %>
+<div class='work-show'>
+  <h2 class='work-show-title'><%= "ユーザー名"%>さんの投稿</h2>
+  <div class='show-contents'>
+    <h3 class='title'>
+      <%= "タイトル" %>
+    </h3>
+    <div class='image'>
+      <%= image_tag "sample1", class:'show-image' %>
+    </div>
+    <div class='show-box'>
+      <table class='show-table'>
+        <tbody>
+          <tr>
+            <th class='detail-work'>テーマ</th>
+            <td class='detail-value'><%= "サンプル" %></td>
+          </tr>
+          <tr>
+            <th class='detail-work'>制作日数</th>
+            <td class='detail-value'><%= "◯日" %></td>
+          </tr>
+          <tr>
+            <th class='detail-work'>お子さまの学年</th>
+            <td class='detail-value'><%= "◯年生" %></td>
+          </tr>
+          <tr>
+            <th class='detail-work'>いいね</th>
+            <td class='detail-value'><%= image_tag "star", class: 'like-star' %><%= "◯" %>件</td>
+          </tr>
+          <tr>
+            <th class='detail-work'>使用した材料</th>
+            <td class='detail-value'><%= "あれこれを何個" %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class='show-info'>
+      <h3 class='show-info-title'>
+        作品の説明
+      </h3>
+      <div class='show-info-value'>
+        <%= "説明つらつらつら" %>
+      </div>
+    </div>
+  </div>
+  <div class='work-comments'>
+    <h3 class='work-comment-title'>
+      コメント
+    </h3>
+    <div class='comment-lists'>
+      <%= "コメントが新しい順に上から表示されるようにする" %>
+    </div>
+    <div class='post-comment'>
+      <%= form_with local: true do |f| %>
+        <%# エラーメッセージが出力されるようにする render %>
+
+        <%# /エラーメッセージが出力されるようにする render %>
+        <div class='comment-message'>
+          <%= f.text_area :hoge, class:'message', id:'work-comment', placeholder:'質問や感想など入力してください' %>
+        </div>
+        <div class='submit'>
+          <%= f.submit 'コメントする', class:'comment-btn' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<%= render "shared/footer" %>

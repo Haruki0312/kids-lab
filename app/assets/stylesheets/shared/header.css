@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+.top-header {
+  background-color: #f3eed5;
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+}
+
+.logo-icon {
+  width: 200px;
+  height: 60px;
+  position: relative;
+}
+
+.lists {
+  position: absolute;
+  right: 5vw;
+  display: flex;
+  font-size: 1vw;
+  margin: 35px 0 0 0;
+}
+
+.login {
+  color: #333333;
+  margin-right: 10px;
+}
+
+.sign-up {
+  color: #333333;
+  margin-left: 10px;
+}
+
+.user-name {
+  color: #333333;
+  margin-right: 10px;
+}
+
+.logout {
+  color: #333333;
+  margin-left: 10px;
+}

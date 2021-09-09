@@ -1,0 +1,13 @@
+.top-footer {
+  background-color: #f3eed5;
+  width: 100vw;
+}
+
+.footer-logo {
+  text-align: center;
+}
+
+.footer-icon {
+  width: 80px;
+  height: 30px;
+}
