@@ -1,0 +1,28 @@
+<%= render "shared/second_header" %>
+
+<%= form_with model: current_user, url:user_path, class:'registration-main', local: true do |f| %>
+  <div class='edit-user-header'>
+    <h2>ユーザー情報編集</h2>
+  </div>
+
+  <div class='form-group'>
+    <div class='form-text-wrap'>
+      <label class='form-text'>ユーザーネーム（お好きなお名前で！）</label>
+        <span class='indispensable'>必須</span>
+    </div>
+    <%= f.text_field :username, class:'input-user', id:'username' %>
+  </div>
+  <div class='form-group'>
+    <div class='form-text-wrap'>
+      <label class='form-text'>メールアドレス</label>
+        <span class='indispensable'>必須</span>
+    </div>
+    <%= f.email_field :email, class:'input-user', id:'email' %>
+  </div>
+  <div class='update-user-btn'>
+    <%= f.submit "更新する", class:"update-user-button" %>
+  </div>
+
+<% end %>
+
+<%= render "shared/footer" %>
