@@ -13,7 +13,6 @@ class WorksController < ApplicationController
     if @work.save
       redirect_to root_path
     else
-      @work = Work.new(work_params)
       render :new
     end
   end

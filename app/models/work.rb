@@ -1,4 +1,5 @@
 class Work < ApplicationRecord
+  validates :image, presence: true
   validates :title, presence: true
   validates :material, presence: true
   validates :explanation, presence: true

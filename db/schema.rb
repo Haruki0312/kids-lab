@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 2021_09_11_145709) do
     t.text "material", null: false
     t.integer "theme_id", null: false
     t.integer "days_id", null: false
-    t.integer "grate_id", null: false
+    t.integer "grade_id", null: false
     t.text "explanation", null: false
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false

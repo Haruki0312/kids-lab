@@ -3,9 +3,8 @@
   <div class='work-post-main'>
     <h2 class='work-post-title'>作品投稿</h2>
     <%= form_with model: @work, local: true do |f| %>
-      <%# エラーメッセージが出力されるようにする %>
+    
       <%= render "shared/error_messages", model: f.object %>
-      <%# /エラーメッセージが出力されるようにする %>
 
       <%# 作品完成画像 %>
       <div class='comp-image-upload'>
