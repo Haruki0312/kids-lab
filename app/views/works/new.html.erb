@@ -3,7 +3,7 @@
   <div class='work-post-main'>
     <h2 class='work-post-title'>作品投稿</h2>
     <%= form_with model: @work, local: true do |f| %>
-    
+
       <%= render "shared/error_messages", model: f.object %>
 
       <%# 作品完成画像 %>
@@ -13,6 +13,7 @@
           <span class='indispensable'>必須</span>
         </div>
         <%= f.file_field :image, class:'comp-img', id:'comp-image' %>
+        <div id='image-content'></div>
       </div>
       <%# /作品完成画像 %>
       <%# タイトルと使用素材 %>
