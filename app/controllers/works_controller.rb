@@ -2,6 +2,7 @@ class WorksController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
 
   def index
+    @works = Work.order("created_at DESC").first(3)
   end
 
   def new
@@ -22,6 +23,6 @@ class WorksController < ApplicationController
 
   private
   def work_params
-    params.require(:work).permit(:image, :title, :material, :theme_id, :days_id, :grade_id, :explanation).merge(user_id: current_user.id)
+    params.require(:work).permit(:image, :title, :material, :theme_id, :product_day_id, :grade_id, :explanation).merge(user_id: current_user.id)
   end
 end

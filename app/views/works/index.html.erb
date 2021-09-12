@@ -19,40 +19,43 @@
       新着UP
     </h2>
     <ul class='work-lists'>
-      <li class='list'>
-        <%# each文で投稿一覧が表示されるようにする "#"のパス指定する %>
-        <%= link_to "#" do %>
-          <%= image_tag "sample1", class: 'work-image' %>
-          <div class='work-main-info'>
+      <% @works.each do |work| %>
+        <li class='list'>
+          <%= link_to work_path(work.id) do %>
+            <%= image_tag work.image, class: 'work-image' %>
             <h3 class='work-title'>
-              <%= "タイトル" %>
+              <%= work.title %>
             </h3>
             <div class='work-username'>
-              <%= "@ユーザー" %>
+              @<%= work.user.username %>
             </div>
-          </div>
-          <div class='work-sub-info'>
-            <div class='work-sub-info-left'>
-              <div class='work-theme'>テーマ：
-                <%= "サンプル" %>
+            <div class='work-sub-info'>
+              <div class='work-sub-info-left'>
+                <div class='work-theme'>テーマ：
+                  <%= work.theme.name %>
+                </div>
+                <div class='work-days'>制作日数：
+                  <%= work.product_day.name %>
+                </div>
               </div>
-              <div class='work-days'>制作日数：
-                <%= "◯日" %>
+              <div class='work-sub-info-right'>
+                <div class='work-comments'>コメント：
+                  <%= "◯件" %>
+                </div>
+                <div class='work-likes'>いいね
+                  <%= image_tag "star", class: 'like-star' %>
+                  <%= "◯件" %>
+                </div>
               </div>
             </div>
-            <div class='work-sub-info-right'>
-              <div class='work-comments'>コメント：
-                <%= "◯件" %>
-              </div>
-              <div class='work-likes'>いいね
-                <%= image_tag "star", class: 'like-star' %>
-                <%= "◯件" %>
-              </div>
-            </div>
-          </div>
-        <% end %>
-        <%# /each文で投稿一覧が表示されるようにする "#"のパス指定する %>
-      </li>
+          <% end %>
+        </li>
+      <% end %>
+      <% if @works[0] == nil %>
+        <div class='nil-data'>
+          新着の投稿はありません。
+        </div>
+      <% end %>
     </ul>
   </div>
   <div class='theme-search'>

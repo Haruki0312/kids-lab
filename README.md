@@ -15,15 +15,15 @@
 - has_many :like_works, through: :likes, source: :work
 
 ## works テーブル
-| Column      | Type       | Options           |
-| ----------- | ---------- | ----------------- |
-| title       | string     | null: false       |
-| material    | text       | null: false       |
-| theme_id    | integer    | null: false       |
-| days_id     | integer    | null: false       |
-| grade_id    | integer    | null: false       |
-| explanation | text       | null: false       |
-| user        | references | foreign_key: true |
+| Column             | Type       | Options           |
+| ------------------ | ---------- | ----------------- |
+| title              | string     | null: false       |
+| material           | text       | null: false       |
+| theme_id           | integer    | null: false       |
+| product_day_id     | integer    | null: false       |
+| grade_id           | integer    | null: false       |
+| explanation        | text       | null: false       |
+| user               | references | foreign_key: true |
 
 ### Association
 

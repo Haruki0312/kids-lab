@@ -5,7 +5,7 @@ class Work < ApplicationRecord
   validates :explanation, presence: true
   with_options numericality: { other_than: 1, message: "can't be blank" } do
     validates :theme_id
-    validates :days_id
+    validates :product_day_id
     validates :grade_id
   end
 
@@ -14,6 +14,6 @@ class Work < ApplicationRecord
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :theme
-  belongs_to :day
+  belongs_to :product_day
   belongs_to :grade
 end

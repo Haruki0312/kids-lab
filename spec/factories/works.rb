@@ -3,7 +3,7 @@ FactoryBot.define do
     title {'テストタイトル'}
     material {'テストテスト材料'}
     theme_id {2}
-    days_id {2}
+    product_day_id {2}
     grade_id {2}
     explanation {'テストテストテスト説明'}
     association :user
