@@ -102,10 +102,10 @@
   </div>
 
 </div>
-<%# 投稿ボタン リンクのパス指定する %>
-<%= link_to("#", class: 'post-btn') do %>
+<%# 投稿ボタン %>
+<%= link_to(new_work_path, class: 'post-btn') do %>
   <span class='post-btn-text'>投稿する</span>
   <%= image_tag 'post-icon' , size: '185x50' ,class: "post-btn-icon" %>
 <% end %>
-<%# /投稿ボタン リンクのパス指定する %>
+<%# /投稿ボタン %>
 <%= render "shared/footer" %>
