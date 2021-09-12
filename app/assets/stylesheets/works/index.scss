@@ -39,6 +39,7 @@ h2:after {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  margin: 40px 0;
 }
 
 .work-image {
@@ -75,11 +76,12 @@ h2:after {
   flex-wrap: wrap;
   display: flex;
   justify-content: center;
+  padding: 20px 0;
 }
 
 .theme-img {
   background-color: #eeeeee;
-  margin: 0 5px;
+  margin: 0 1vw;
   border-radius: 50%;
   width: 10vw;
   height: 10vh;
@@ -87,5 +89,5 @@ h2:after {
 
 .theme-name {
   text-align: center;
-  width: 11vw;
+  width: 100%;
 }
