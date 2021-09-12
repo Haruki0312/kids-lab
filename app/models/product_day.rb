@@ -1,4 +1,4 @@
-class Day < ActiveHash::Base
+class ProductDay < ActiveHash::Base
   self.data = [
     { id: 1, name: '---' },
     { id: 2, name: '1日' },

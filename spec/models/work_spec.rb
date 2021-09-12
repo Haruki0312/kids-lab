@@ -7,7 +7,7 @@ RSpec.describe Work, type: :model do
 
   describe '作品新規投稿' do
     context '新規投稿できる場合' do
-      it 'image、title、material、theme_id、days_id、grade_id、explanationが存在すれば登録できる' do
+      it 'image、title、material、theme_id、product_day_id、grade_id、explanationが存在すれば登録できる' do
       expect(@work).to be_valid
       end
     end
@@ -33,8 +33,8 @@ RSpec.describe Work, type: :model do
         @work.valid?
         expect(@work.errors.full_messages).to include("Theme can't be blank")
       end
-      it 'days_idが「1」では登録できない' do
-        @work.days_id = 1
+      it 'product_day_idが「1」では登録できない' do
+        @work.product_day_id = 1
         @work.valid?
         expect(@work.errors.full_messages).to include("Days can't be blank")
       end
