@@ -1,27 +1,27 @@
 <%= render "shared/second_header" %>
 <div class='work-show'>
-  <h2 class='work-show-title'><%= "ユーザー名"%>さんの投稿</h2>
+  <h2 class='work-show-title'><%= @work.user.username %>さんの投稿</h2>
   <div class='show-contents'>
     <h3 class='title'>
-      <%= "タイトル" %>
+      <%= @work.title %>
     </h3>
     <div class='image'>
-      <%= image_tag "sample1", class:'show-image' %>
+      <%= image_tag @work.image, class:'show-image' %>
     </div>
     <div class='show-box'>
       <table class='show-table'>
         <tbody>
           <tr>
             <th class='detail-work'>テーマ</th>
-            <td class='detail-value'><%= "サンプル" %></td>
+            <td class='detail-value'><%= @work.theme.name %></td>
           </tr>
           <tr>
             <th class='detail-work'>制作日数</th>
-            <td class='detail-value'><%= "◯日" %></td>
+            <td class='detail-value'><%= @work.product_day.name %></td>
           </tr>
           <tr>
             <th class='detail-work'>お子さまの学年</th>
-            <td class='detail-value'><%= "◯年生" %></td>
+            <td class='detail-value'><%= @work.grade.name %></td>
           </tr>
           <tr>
             <th class='detail-work'>いいね</th>
@@ -29,7 +29,7 @@
           </tr>
           <tr>
             <th class='detail-work'>使用した材料</th>
-            <td class='detail-value'><%= "あれこれを何個" %></td>
+            <td class='detail-value'><%= @work.material %></td>
           </tr>
         </tbody>
       </table>
@@ -39,7 +39,7 @@
         作品の説明
       </h3>
       <div class='show-info-value'>
-        <%= "説明つらつらつら" %>
+        <%= safe_join(@work.explanation.split("\n"),tag(:br)) %>
       </div>
     </div>
   </div>
