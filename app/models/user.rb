@@ -10,4 +10,5 @@ class User < ApplicationRecord
   validates :username, presence: true
 
   has_many :works
+  has_many :comments
 end
