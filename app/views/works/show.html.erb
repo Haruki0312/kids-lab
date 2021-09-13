@@ -29,7 +29,7 @@
           </tr>
           <tr>
             <th class='detail-work'>使用した材料</th>
-            <td class='detail-value'><%= @work.material %></td>
+            <td class='detail-value'><%= safe_join(@work.material.split("\n"), tag(:br)) %></td>
           </tr>
         </tbody>
       </table>
@@ -39,7 +39,7 @@
         作品の説明
       </h3>
       <div class='show-info-value'>
-        <%= safe_join(@work.explanation.split("\n"),tag(:br)) %>
+        <%= safe_join(@work.explanation.split("\n"), tag(:br)) %>
       </div>
     </div>
   </div>
