@@ -1,8 +1,10 @@
 class Comment < ApplicationRecord
 
-  validates :text, presence: true
-  validates :user, presence: true
-  validetas :work, presence: true
+  with_options presence: true do
+    validates :text
+    validates :user_id
+    validetas :work_id
+  end
 
   belongs_to :user
   belongs_to :work
