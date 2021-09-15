@@ -36,7 +36,7 @@
 
 | Column  | Type       | Options           |
 | ------- | ---------- | ----------------- |
-| message | text       | null: false       |
+| text    | text       | null: false       |
 | user    | references | foreign_key: true |
 | work    | references | foreign_key: true |
 
