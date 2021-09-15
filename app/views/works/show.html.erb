@@ -48,7 +48,7 @@
       コメント
     </h3>
     <div class='comment-lists' id='comments'>
-      <% @comments.each do |comment| %>
+      <% @comments.reverse_each do |comment| %>
         <div class='comment-user'>
           <%= comment.user.username %> さんからのコメント
         </div>
