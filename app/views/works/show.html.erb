@@ -47,13 +47,18 @@
     <h3 class='work-comment-title'>
       コメント
     </h3>
-    <div class='comment-lists'>
+    <div class='comment-lists' id='comments'>
       <% @comments.each do |comment| %>
-        <p><%= safe_join(comment.text.split("\n"), tag(:br)) %></p>
+        <div class='comment-user'>
+          <%= comment.user.username %> さんからのコメント
+        </div>
+        <div class='comment-text'>
+          <%= safe_join(comment.text.split("\n"), tag(:br)) %>
+        </div>
       <% end %>
     </div>
     <div class='post-comment'>
-      <%= form_with model: [@work, @comment], local: true do |f| %>
+      <%= form_with model: [@work, @comment] do |f| %>
       
         <%= render "shared/error_messages", model: f.object %>
 

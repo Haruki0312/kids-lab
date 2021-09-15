@@ -72,6 +72,14 @@
   margin: 10px auto;
   border-top: 2px solid #e4af9b;
   border-bottom: 2px solid #e4af9b;
+  text-align: left;
+}
+
+.comment-user {
+  font-size: 10px;
+  font-weight: bold;
+  color: #808080;
+  margin-top: 5px;
 }
 
 .work-comment {

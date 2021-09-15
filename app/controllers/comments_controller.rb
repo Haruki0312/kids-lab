@@ -1,8 +1,16 @@
 class CommentsController < ApplicationController
-  before_action :authenticate_user!, only: [:create]
+  before_action :authenticate_user!, only: [:new, :create]
 
+  def new
+    @comments = Comment.all
+    @comment = Comment.new
+  end
+  
   def create
-    @comment = Comment.create(comment_params)
+    @comment = Comment.new(comment_params)
+    if @comment.save
+      ActionCable.server.broadcast 'comment_channel', content: @comment
+    end
   end
 
   private
