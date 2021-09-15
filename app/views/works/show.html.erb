@@ -48,15 +48,17 @@
       コメント
     </h3>
     <div class='comment-lists'>
-      <%= "コメントが新しい順に上から表示されるようにする" %>
+      <% @comments.each do |comment| %>
+        <p><%= safe_join(comment.text.split("\n"), tag(:br)) %></p>
+      <% end %>
     </div>
     <div class='post-comment'>
-      <%= form_with local: true do |f| %>
-        <%# エラーメッセージが出力されるようにする render %>
+      <%= form_with model: [@work, @comment], local: true do |f| %>
+      
+        <%= render "shared/error_messages", model: f.object %>
 
-        <%# /エラーメッセージが出力されるようにする render %>
         <div class='work-comment-text'>
-          <%= f.text_area :hoge, class:'work-comment', id:'work-comment', placeholder:'質問や感想など入力してください' %>
+          <%= f.text_area :text, class:'work-comment', id:'work-comment', placeholder:'質問や感想など入力してください' %>
         </div>
         <div class='submit'>
           <%= f.submit 'コメントする', class:'comment-btn' %>
