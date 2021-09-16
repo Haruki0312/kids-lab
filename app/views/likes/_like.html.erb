@@ -1,0 +1,20 @@
+<% if user_signed_in? %>
+  <% if current_user.likes.find_by(work_id: @work.id) %>
+    <%= link_to work_like_path(@work, work.likes), method: :delete, remote: true do %>
+      <div class='like-point'>
+        <%= image_tag "red-like-icon", size: '15x15' %>
+        <%= @work.likes.count %>
+      </div>
+    <% end %>
+  <% else %>
+    <%= link_to work_likes_path(@work.id), method: :post, remote: true do %>
+      <div class='like-point'>
+        <%= image_tag "like-icon", size: '15x15' %>
+        <%= @work.likes.count %>
+      </div>
+    <% end %>
+  <% end %>
+<% else %>
+  <%= image_tag "red-like-icon", size: '15x15' %>
+  <%= @work.likes.count %>
+<% end %>

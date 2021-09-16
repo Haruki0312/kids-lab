@@ -25,7 +25,9 @@
           </tr>
           <tr>
             <th class='detail-work'>いいね</th>
-            <td class='detail-value'><%= image_tag "star", class: 'like-star' %><%= "◯" %>件</td>
+            <td class='detail-value' id='likes_buttons<%= @work.id %>'>
+              <%= render partial: "likes/like", locals: { work: @work, like: @like } %>
+            </td>
           </tr>
           <tr>
             <th class='detail-work'>使用した材料</th>
