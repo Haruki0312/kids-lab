@@ -43,8 +43,8 @@
                   <%= work.comments.length %>件
                 </div>
                 <div class='work-likes'>いいね
-                  <%= image_tag "star", class: 'like-star' %>
-                  <%= "◯件" %>
+                  <%= image_tag "red-like-icon", class: 'like-icon' %>
+                  <%= work.likes.count %>
                 </div>
               </div>
             </div>

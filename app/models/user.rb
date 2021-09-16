@@ -12,4 +12,5 @@ class User < ApplicationRecord
   has_many :works
   has_many :comments
   has_many :likes, dependent: :destroy
+  has_many :like_works, through: :likes, source: :work
 end
