@@ -94,4 +94,8 @@
 
 .comment-btn {
   width: 120px;
+  height: 40px;
+  background-color: #e4af9b;
+  border: 1px solid #e4af9b;
+  color: #fff;
 }

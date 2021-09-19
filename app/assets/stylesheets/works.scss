@@ -1,3 +1,18 @@
 // Place all the styles related to the works controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.root-btn {
+  text-align: center;
+  height: 60px;
+  width: 30%;
+  margin: 0px auto;
+  padding: 20px 0;
+}
+
+.root-back-btn {
+  background-color: #aaa;
+  border: 1px solid #aaa;
+  color: #fff;
+  padding: 15px 10%;
+}
