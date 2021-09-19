@@ -1,0 +1,52 @@
+<%= render 'shared/second_header' %>
+
+<h2>
+  検索結果
+</h2>
+
+<%# 検索結果で条件分岐 %>
+<% if @results.length != 0 %>
+  <ul class='work-lists'>
+    <% @results.each do |result| %>
+      <li class='list'>
+        <%= link_to work_path(result.id) do %>
+          <%= image_tag result.image, class: 'work-image' %>
+          <h3 class='work-title'>
+            <%= result.title %>
+          </h3>
+          <div class='work-username'>
+            @<%= result.user.username %>
+          </div>
+          <div class='work-sub-info'>
+            <div class='work-sub-info-left'>
+              <div class='work-theme'>テーマ：
+                <%= result.theme.name %>
+              </div>
+              <div class='work-days'>制作日数：
+                <%= result.product_day.name %>
+              </div>
+            </div>
+            <div class='work-sub-info-right'>
+              <div class='work-comments'>コメント：
+                <%= result.comments.length %>件
+              </div>
+              <div class='work-likes'>いいね
+                <%= image_tag "red-like-icon", class: 'like-icon' %>
+                <%= result.likes.count %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <div class='no-content'>
+    該当する投稿は現在ありません
+  </div>
+<% end %>
+<div class='root-btn'>
+  <%= link_to 'もどる', root_path, class:'root-back-btn' %>
+</div>
+
+<%= render 'shared/footer' %>
