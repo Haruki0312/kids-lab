@@ -63,44 +63,51 @@
       テーマ検索
     </h2>
     <ul class='theme-lists'>
-      <%# カテゴリ検索できるようにする "#"のパス指定する %>
-      <li class='theme-image'>
-        <%= link_to image_tag("experiment", class: 'theme-img'), "#" %>
-        <div class='theme-name'>
-          実験
-        </div>
-      </li>
-      <li class='theme-image'>
-        <%= link_to image_tag("make", class: 'theme-img'), "#" %>
-        <div class='theme-name'>
-          工作
-        </div>
-      </li>
-      <li class='theme-image'>
-        <%= link_to image_tag("observation", class: 'theme-img'), "#" %>
-        <div class='theme-name'>
-          観察
-        </div>
-      </li>
-      <li class='theme-image'>
-        <%= link_to image_tag("research", class: 'theme-img'), "#" %>
-        <div class='theme-name'>
-          調べ学習
-        </div>
-      </li>
-      <li class='theme-image'>
-        <%= link_to image_tag("weather", class: 'theme-img'), "#" %>
-        <div class='theme-name'>
-          天候
-        </div>
-      </li>
-      <li class='theme-image'>
-        <%= link_to image_tag("cooking", class: 'theme-img'), "#" %>
-        <div class='theme-name'>
-          料理/食べ物
-        </div>
-      </li>
-      <%# /カテゴリ検索できるようにする "#"のパス指定する %>
+      <%= search_form_for @p, url: search_works_path do |f| %>
+        <li class='theme-image'>
+          <%= link_to image_tag("experiment", class: 'theme-img'), "#" %>
+          <div class='theme-name'>
+            <%= f.label :theme_id_eq, '実験' %>
+            <%= f.radio_button :theme_id_eq, 2 %>
+          </div>
+        </li>
+        <li class='theme-image'>
+          <%= link_to image_tag("make", class: 'theme-img'), "#" %>
+          <div class='theme-name'>
+            <%= f.label :theme_id_eq, '工作' %>
+            <%= f.radio_button :theme_id_eq, 3 %>
+          </div>
+        </li>
+        <li class='theme-image'>
+          <%= link_to image_tag("observation", class: 'theme-img'), "#" %>
+          <div class='theme-name'>
+            <%= f.label :theme_id_eq, '観察' %>
+            <%= f.radio_button :theme_id_eq, 4 %>
+          </div>
+        </li>
+        <li class='theme-image'>
+          <%= link_to image_tag("research", class: 'theme-img'), "#" %>
+          <div class='theme-name'>
+            <%= f.label :theme_id_eq, '調べ学習' %>
+            <%= f.radio_button :theme_id_eq, 5 %>
+          </div>
+        </li>
+        <li class='theme-image'>
+          <%= link_to image_tag("weather", class: 'theme-img'), "#" %>
+          <div class='theme-name'>
+            <%= f.label :theme_id_eq, '天候' %>
+            <%= f.radio_button :theme_id_eq, 6 %>
+          </div>
+        </li>
+        <li class='theme-image'>
+          <%= link_to image_tag("cooking", class: 'theme-img'), "#" %>
+          <div class='theme-name'>
+            <%= f.label :theme_id_eq, '料理/食べ物' %>
+            <%= f.radio_button :theme_id_eq, 7 %>
+          </div>
+        </li>
+        <%= f.submit '検索する' %>
+      <% end %>
     </ul>
   </div>
 

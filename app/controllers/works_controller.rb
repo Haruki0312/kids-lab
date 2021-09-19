@@ -1,6 +1,6 @@
 class WorksController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
-
+  before_action :search_work, only: [:index, :search]
   def index
     @works = Work.order("created_at DESC").first(3)
   end
@@ -24,8 +24,16 @@ class WorksController < ApplicationController
     @comments = @work.comments.includes(:user)
   end
 
+  def search
+    @results = @p.result
+  end
+
   private
   def work_params
     params.require(:work).permit(:image, :title, :material, :theme_id, :product_day_id, :grade_id, :explanation).merge(user_id: current_user.id)
+  end
+
+  def search_work
+    @p = Work.ransack(params[:q])
   end
 end

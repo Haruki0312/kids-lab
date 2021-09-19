@@ -19,7 +19,7 @@ class Work < ApplicationRecord
   end
 
   extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to :theme
+  belongs_to_active_hash :theme
   belongs_to :product_day
   belongs_to :grade
 end
