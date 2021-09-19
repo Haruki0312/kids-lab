@@ -62,13 +62,13 @@
     <div class='post-comment'>
       <%= form_with model: [@work, @comment] do |f| %>
       
-        <%= render "shared/error_messages", model: f.object %>
-
-        <div class='work-comment-text'>
-          <%= f.text_area :text, class:'work-comment', id:'work-comment', placeholder:'質問や感想など入力してください' %>
-        </div>
-        <div class='submit'>
-          <%= f.submit 'コメントする', class:'comment-btn' %>
+        <div class='comment-box'>
+          <div class='work-comment-text'>
+            <%= f.text_area :text, class:'work-comment', id:'work-comment', placeholder:'質問や感想など入力してください' %>
+          </div>
+          <div class='submit'>
+            <%= f.submit 'コメントする', class:'comment-btn' %>
+          </div>
         </div>
       <% end %>
     </div>

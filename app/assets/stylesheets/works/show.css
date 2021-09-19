@@ -82,7 +82,14 @@
   margin-top: 5px;
 }
 
+.comment-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .work-comment {
+  height: 50px;
   width: 35vw;
   padding: 5px;
   border-radius: 4px;
@@ -98,4 +105,5 @@
   background-color: #e4af9b;
   border: 1px solid #e4af9b;
   color: #fff;
+  margin-left: 20px;
 }

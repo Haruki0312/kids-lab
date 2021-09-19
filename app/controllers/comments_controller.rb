@@ -10,6 +10,8 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     if @comment.save
       ActionCable.server.broadcast 'comment_channel', content: @comment
+    else
+      render :new
     end
   end
 
